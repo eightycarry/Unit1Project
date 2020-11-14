@@ -1,4 +1,11 @@
+body {
+    background-image: url("pizzabackground.jpg");
+    position: relative;
+}
+
 h1 {
+    color: black;
+    background-color: dimgrey;
     text-align: center;
     margin: auto;
     width: 50%;
