@@ -49,11 +49,12 @@ $(document).ready(function () {
         var veggieTotal = $("input[name=veggies]:checked").length;
 
         //declare subtotal variable and
-        //add the prices of everything to get subtotal
+        //add the prices of everything to get the subtotal
         var subTotal = (sizeTotal + meatTotal + veggieTotal);
 
         //add sales tax and delivery fee to subtotal
         var taxTotal = subTotal * .051;
+        //declare total cost
         var grandTotal =  subTotal + taxTotal + 2.0;
 
         //output to review tab
