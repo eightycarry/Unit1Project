@@ -1,6 +1,5 @@
 body {
     background-image: url("pizzabackground.jpg");
-    position: relative;
 }
 
 h1 {
@@ -12,3 +11,19 @@ h1 {
     border: 3px solid black;
     padding: 10px;
 }
+
+.tabs {
+    margin: 10px;
+}
+
+.tab-content {
+    background-color: tan;
+}
+
+hr {
+    margin-top: 0;
+    border: 3px solid #000;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+

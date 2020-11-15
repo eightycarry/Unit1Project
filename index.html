@@ -2,20 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jeff's Pizza</title>
+    <title>Jeff's Pizzeria</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="pizza.js"></script>
-    <link rel="stylesheet" href="pizza.css">
+    <link rel="stylesheet" href="pizza.css" type="text/css">
 </head>
 <body>
 
     <h1>Jeff's Pizzeria</h1>
 
     <div id="wrapper">
-        <header>
-            <span class=""></span>
-        </header>
-    </div>
+        <div class="tabs">
 
+            <nav>
+                <ul id="tabs" class="nav nav-tabs">
+
+                    <a class="nav-link active" href="#order">Order</a>
+
+                    <a class="nav-link active" href="#info">Information</a>
+
+                    <a class="nav-link active" href="#review">Order Review</a>
+
+                </ul>
+            </nav>
+
+            <div class="tab-content">
+                <div id="order" class="tab-pane active">
+
+                    <h2>Select the Size of Your Pizza</h2>
+                    <hr>
+
+                    <input type="radio" name="size" id="small">
+                    <label for="small">Small</label>
+                    <br>
+
+                    <input type="radio" name="size" id="medium">
+                    <label for="medium">Medium</label>
+                    <br>
+
+                    <input type="radio" name="size" id="large">
+                    <label for="large">Large</label>
+                    <br>
+                </div>
+
+                <div id="info" class="tab-pane">
+
+                    <h2>Address and Contact Info</h2>
+                    <hr>
+
+                    <label for="firstName">First Name: </label>
+                    <input type="text" name="firstName" id="firstName">
+                    <br>
+
+                    <label for="lastName">Last Name: </label>
+                    <input type="text" name="lastName" id="lastName">
+                    <br>
+
+                    <label for="address">Address: </label>
+                    <input type="text" name="address" id="address">
+                    <br>
+
+                    <label for="city">City: </label>
+                    <input type="text" name="city" id="city">
+                    <br>
+
+                    <label for="state">State: </label>
+                    <input type="text" name="state" id="state">
+                    <br>
+
+                    <label for="zip">Zip Code: </label>
+                    <input type="text" name="zip" id="zip">
+                    <br>
+
+                    <label for="phone">Phone Number: </label>
+                    <input type="text" name="phone" id="phone">
+                    <br>
+
+                </div>
+
+                <div id="review" class="tab-pane">
+
+                    <h2>Order Review</h2>
+                    <hr>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
