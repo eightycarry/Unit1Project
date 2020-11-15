@@ -3,81 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <title>Jeff's Pizzeria</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="pizza.js"></script>
-    <link rel="stylesheet" href="pizza.css" type="text/css">
+    <!-- Bootstrap styles first -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Our styles -->
+    <link href="pizza.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
+
+<body id="page">
 
     <h1>Jeff's Pizzeria</h1>
 
-    <div id="wrapper">
-        <div class="tabs">
-
-            <nav>
-                <ul id="tabs" class="nav nav-tabs">
-
-                    <a class="nav-link active" href="#order">Order</a>
-
-                    <a class="nav-link active" href="#info">Information</a>
-
-                    <a class="nav-link active" href="#review">Order Review</a>
-
-                </ul>
-            </nav>
-
+    <div class="container">
+        <nav>
+            <ul id="tabs" class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#order" id="orderTab">Order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#info" id="infoTab">Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#review" id="reviewTab">Review</a>
+                </li>
+            </ul>
+        </nav>
+        <form>
             <div class="tab-content">
                 <div id="order" class="tab-pane active">
-
-                    <h2>Select the Size of Your Pizza</h2>
+                    <h2>Customize Your Pizza</h2>
                     <hr>
 
-                    <input type="radio" name="size" id="small">
-                    <label for="small">Small</label>
-                    <br>
+                        <h3>Size</h3>
+                        <input type="radio" name="size" id="small" data-price="7.00" value="Small">
+                        <label for="small">Small ($7)</label>
+                        <br>
 
-                    <input type="radio" name="size" id="medium">
-                    <label for="medium">Medium</label>
-                    <br>
+                        <input type="radio" name="size" id="medium" data-price="9.00" value="Medium">
+                        <label for="medium">Medium ($9)</label>
+                        <br>
 
-                    <input type="radio" name="size" id="large">
-                    <label for="large">Large</label>
-                    <br>
+                        <input type="radio" name="size" id="large" data-price="12.00" value="Large">
+                        <label for="large">Large ($12)</label>
+                        <br><br>
+
+                        <h3>Crust</h3>
+                        <input type="radio" name="crust" id="thin" value="Thin Crust">
+                        <label for="thin">Thin Crust</label>
+                        <br>
+
+                        <input type="radio" name="crust" id="pan" value="Pan Crust">
+                        <label for="pan">Pan Crust</label>
+                        <br>
+
+                        <input type="radio" name="crust" id="glutenFree" value="Gluten Free Crust">
+                        <label for="glutenFree">Gluten Free Crust</label>
+                        <br><br>
+
+                        <h3>Meats ($1.50 each)</h3>
+                        <input type="checkbox" name="meats" id="pepperoni" data-price="1.50" value="Pepperoni">
+                        <label for="pepperoni">Pepperoni</label>
+                        <br>
+
+                        <input type="checkbox" name="meats" id="sausage" data-price="1.50" value="Sausage">
+                        <label for="sausage">Sausage</label>
+                        <br>
+
+                        <input type="checkbox" name="meats" id="bacon" data-price="1.50" value="Bacon">
+                        <label for="bacon">Bacon</label>
+                        <br><br>
+
+                        <h3>Veggies ($1.00) each</h3>
+                        <input type="checkbox" name="veggies" id="mushrooms" data-price="1.00" value="Mushrooms">
+                        <label for="mushrooms">Mushrooms</label>
+                        <br>
+
+                        <input type="checkbox" name="veggies" id="spinach" data-price="1.00" value="Spinach">
+                        <label for="spinach">Spinach</label>
+                        <br>
+
+                        <input type="checkbox" name="veggies" id="olives" data-price="1.00" value="Olives">
+                        <label for="olives">Olives</label>
+                        <br>
                 </div>
 
                 <div id="info" class="tab-pane">
-
                     <h2>Address and Contact Info</h2>
                     <hr>
 
-                    <label for="firstName">First Name: </label>
-                    <input type="text" name="firstName" id="firstName">
-                    <br>
-
-                    <label for="lastName">Last Name: </label>
-                    <input type="text" name="lastName" id="lastName">
+                    <label for="name">Full Name: </label>
+                    <input type="text" name="name" id="name">
                     <br>
 
                     <label for="address">Address: </label>
                     <input type="text" name="address" id="address">
                     <br>
 
-                    <label for="city">City: </label>
-                    <input type="text" name="city" id="city">
-                    <br>
-
-                    <label for="state">State: </label>
-                    <input type="text" name="state" id="state">
-                    <br>
-
-                    <label for="zip">Zip Code: </label>
-                    <input type="text" name="zip" id="zip">
-                    <br>
-
                     <label for="phone">Phone Number: </label>
                     <input type="text" name="phone" id="phone">
-                    <br>
-
                 </div>
 
                 <div id="review" class="tab-pane">
@@ -85,10 +108,40 @@
                     <h2>Order Review</h2>
                     <hr>
 
-                </div>
+                    <h3>Name for order:</h3>
+                    <p id="nameOutput"></p>
 
+                    <h3>Delivery Address:</h3>
+                    <p id="addressOutput"></p>
+
+                    <h3>Phone Number:</h3>
+                    <p id="phoneOutput"></p>
+                    <br>
+
+                    <h3>Order Details:</h3>
+                    <p id="sizeOutput"></p>
+                    <p id="crustOutput"></p>
+                    <p id="meatOutput"></p>
+                    <p id="veggieOutput"></p>
+                    <br>
+
+                    <h3>Order Total:</h3>
+                    <p id="totalOutput"></p>
+
+                    <button id="submitOrder">Submit</button>
+
+                </div>
             </div>
-        </div>
+        </form>
     </div>
+
+    <!-- jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- Popper and Bootstrap second -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Our code last -->
+    <script src="pizza.js"></script>
 </body>
+
 </html>

@@ -7,13 +7,9 @@ h1 {
     background-color: dimgrey;
     text-align: center;
     margin: auto;
-    width: 50%;
+    width: 20%;
     border: 3px solid black;
     padding: 10px;
-}
-
-.tabs {
-    margin: 10px;
 }
 
 .tab-content {
@@ -22,8 +18,7 @@ h1 {
 
 hr {
     margin-top: 0;
-    border: 3px solid #000;
+    border: 1px solid #000;
     margin-left: 10px;
     margin-right: 10px;
 }
-
