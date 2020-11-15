@@ -1,9 +1,9 @@
 body {
     background-image: url("pizzabackground.jpg");
+    font-family: Arial;
 }
 
 h1 {
-    color: black;
     background-color: dimgrey;
     text-align: center;
     margin: auto;
@@ -14,6 +14,7 @@ h1 {
 
 .tab-content {
     background-color: tan;
+    opacity: 95%;
 }
 
 hr {
@@ -21,4 +22,16 @@ hr {
     border: 1px solid #000;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+#tabs {
+    background-color: tan;
+}
+
+#review {
+    font-weight: bolder;
+}
+
+a {
+    font-weight: bold;
 }

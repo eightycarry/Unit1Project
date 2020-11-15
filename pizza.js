@@ -22,7 +22,7 @@ $(document).ready(function () {
         //ask jQuery for selected pizza size
         var selectedSize = $("input[name=size]:checked").val();
 
-        //get the data-price value for the selected size
+        //get the data-price value for the selected size and convert to a number
         var sizeTotal = parseFloat($("input[name=size]:checked").data("price"));
 
         //ask jQuery for selected pizza crust
@@ -33,7 +33,6 @@ $(document).ready(function () {
         $("input[name=meats]:checked").each(function() {
             selectedMeats.push($(this).val());
         });
-        //$('#meatOutput').val(selectedMeats);
 
         //collect total price of selected meats
         //check which meats were selected, then add $1.50 for each
@@ -45,14 +44,13 @@ $(document).ready(function () {
         $("input[name=veggies]:checked").each(function() {
             selectedVeggies.push($(this).val());
         });
-        //$('#veggieOutput').val(selectedMeats);
 
         //collect total price of selected veggies
         var veggieTotal = $("input[name=veggies]:checked").length;
 
+        //declare subtotal variable and
         //add the prices of everything to get subtotal
-        var subTotal;
-        subTotal = (sizeTotal + meatTotal + veggieTotal);
+        var subTotal = (sizeTotal + meatTotal + veggieTotal);
 
         //add sales tax and delivery fee to subtotal
         var taxTotal = subTotal * .051;
@@ -62,13 +60,14 @@ $(document).ready(function () {
         $("#nameOutput").text(name);
         $("#addressOutput").text(address);
         $("#phoneOutput").text(phoneNumber);
-        $("#sizeOutput").text(selectedSize);
-        $("#crustOutput").text(selectedCrust);
-        $("#meatOutput").text(selectedMeats);
-        $("#veggieOutput").text(selectedVeggies);
+        $("#sizeOutput").text(`Pizza Size: ${selectedSize}`);
+        $("#crustOutput").text(`Crust Type: ${selectedCrust}`);
+        $("#meatOutput").text(`Meats: ${selectedMeats}`);
+        $("#veggieOutput").text(`Veggies: ${selectedVeggies}`);
         $("#subtotalOutput").text(`Subtotal: $${parseFloat(subTotal).toFixed(2)}`);
         $("#salesTaxOutput").text(`Sales Tax: $${parseFloat(taxTotal).toFixed(2)}`);
         $("#deliveryFeeOutput").text(`Delivery Fee: $2.00`);
         $("#totalOutput").text(`Your total is $${parseFloat(grandTotal).toFixed(2)}`);
+        $("#thanks").text(`Thank you for your order! Your pizza is on the way!`);
     }
 });
