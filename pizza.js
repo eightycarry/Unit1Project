@@ -23,21 +23,29 @@ $(document).ready(function () {
         var phoneNumber = $("#phone").val();
 
         //ask jQuery for selected pizza size
-        var selectedSize = $("input[name=size]:checked");
+        var selectedSize = $("input[name=size]:checked").val();
 
         //get the data-price value for the selected size
-        selectedSize.each(function() {
+        /*selectedSize.each(function() {
             subtotal += $(this).data("price");
-        })
+        })*/
 
         //ask jQuery for selected pizza crust
-        var selectedCrust = $("input[name=crust]:checked");
+        var selectedCrust = $("input[name=crust]:checked").val();
 
         //ask jQuery for all selected meats boxes
-        var selectedMeats = $("input[name=meats]:checked");
+        var selectedMeats = [];
+        $("input[name=meats]:checked").each(function() {
+            selectedMeats.push($(this).val());
+        });
+        $('#meatOutput').val(selectedMeats);
 
         //ask jQuery for all selected veggie boxes
-        var selectedVeggies = $("input[name=veggies]:checked");
+        var selectedVeggies = [];
+        $("input[name=veggies]:checked").each(function() {
+            selectedVeggies.push($(this).val());
+        });
+        $('#veggieOutputOutput').val(selectedMeats);
 
         //output to review tab
         $("#nameOutput").text(name);
@@ -46,6 +54,6 @@ $(document).ready(function () {
         $("#sizeOutput").text(selectedSize);
         $("#crustOutput").text(selectedCrust);
         $("#meatOutput").text(selectedMeats);
-        $("#veggieOutputOutput").text(selectedVeggies);
+        $("#veggieOutput").text(selectedVeggies);
     }
 });
